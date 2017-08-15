@@ -26,6 +26,10 @@ const template = `
       width: 2rem
     }
 
+    .spinner.spinner-inline {
+      display: inline-block;
+    }
+
     .sr-only {
       position: absolute;
       width: 1px;
@@ -48,7 +52,7 @@ const template = `
     }
   </style>
 
-  <div class="spinner">
+  <div class="spinner spinner-inline">
     <span class="sr-only">Loading…</span>
   </div>
 `;
