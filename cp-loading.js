@@ -6,37 +6,51 @@ const template = `
       display: block
     }
 
-    .loader,
-    .loader:after {
-      border-radius: 50%;
-      width: 10em;
-      height: 10em;
-    }
-
-    .loader {
-      margin: 60px auto;
-      font-size: 10px;
+    .spinner {
+      -webkit-animation: rotation 0.6s infinite linear;
+      -o-animation: rotation 0.6s infinite linear;
+      animation: rotation 0.6s infinite linear;
+      border-bottom: 4px solid rgba(0,0,0,0.25);
+      border-left: 4px solid rgba(0,0,0,0.25);
+      border-right: 4px solid rgba(0,0,0,0.25);
+      border-top: 4px solid rgba(0,0,0,0.75);
+      -moz-border-radius: 100%;
+      -webkit-border-radius: 100%;
+      border-radius: 100%;
+      margin: 0 auto;
       position: relative;
-      text-indent: -9999em;
-      border-top: 1.1em solid rgba(255, 255, 255, 0.2);
-      border-right: 1.1em solid rgba(255, 255, 255, 0.2);
-      border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
-      border-left: 1.1em solid #ffffff;
-      transform: translateZ(0);
-      animation: spin 1.1s infinite linear;
+      display: block;
+      height: 32px;
+      height: 2rem;
+      width: 32px;
+      width: 2rem
     }
 
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+    @keyframes rotation {
+      from {
+        transform: rotate(0deg)
       }
-      100% {
-        transform: rotate(360deg);
+
+      to {
+        transform: rotate(359deg)
       }
     }
   </style>
 
-  <div class="loader">Loading...</div>
+  <div class="spinner">
+    <span class="sr-only">Loading…</span>
+  </div>
 `;
 
 class CpLoading extends CpBaseElement {
