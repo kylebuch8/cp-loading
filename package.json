@@ -1,6 +1,6 @@
 {
   "name": "cp-loading",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Loading element for Customer Portal elements",
   "repository": {
     "type": "git",
@@ -15,9 +15,14 @@
   "author": "Kyle Buchanan",
   "license": "ISC",
   "dependencies": {
+    "cp-base-element": "0.0.6"
+  },
+  "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-es2015": "^6.24.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
     "del": "^3.0.0",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-babel": "^6.1.2",
